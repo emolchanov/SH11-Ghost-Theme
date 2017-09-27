@@ -1,0 +1,72 @@
+{
+  "name": "sh11-ghost-theme",
+  "description": "sh11-ghost-theme",
+  "demo": "https://sh11.pp.ua",
+  "version": "1.0.0",
+  "engines": {
+    "ghost": ">=1.9.0"
+  },
+  "license": "MIT",
+  "screenshots": {
+    "desktop": "assets/screenshot-desktop.jpg",
+    "mobile": "assets/screenshot-mobile.jpg"
+  },
+  "author": {
+    "name": "Eugene Molchanov",
+    "email": "eugene@molchanov.in",
+    "url": "https://molchanov.in"
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+      "Minimal"
+    ]
+  },
+  "keywords": [
+    "ghost",
+    "theme"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emolchanov/SH11-Ghost-Theme.git"
+  },
+  "bugs": "https://github.com/emolchanov/SH11-Ghost-Theme/issues",
+  "devDependencies": {
+    "autoprefixer": "7.1.4",
+    "babel-core": "6.26.0",
+    "babel-eslint": "8.0.1",
+    "babel-loader": "7.1.2",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-stage-2": "6.24.1",
+    "cssnano": "3.10.0",
+    "eslint": "4.7.2",
+    "eslint-config-airbnb-base": "12.0.0",
+    "eslint-plugin-filenames": "1.2.0",
+    "eslint-plugin-import": "2.7.0",
+    "gulp": "3.9.1",
+    "gulp-livereload": "3.8.1",
+    "gulp-nodemon": "2.2.1",
+    "gulp-postcss": "7.0.0",
+    "gulp-sourcemaps": "2.6.1",
+    "gulp-util": "3.0.8",
+    "gulp-watch": "4.3.11",
+    "gulp-zip": "4.0.0",
+    "jquery": "3.2.1",
+    "lodash": "4.17.4",
+    "postcss": "6.0.12",
+    "postcss-color-function": "4.0.0",
+    "postcss-csscomb": "1.0.2",
+    "postcss-custom-properties": "6.1.0",
+    "postcss-easy-import": "3.0.0",
+    "stylelint": "8.1.1",
+    "stylelint-config-standard": "17.0.0",
+    "webpack": "3.6.0",
+    "webpack-stream": "4.0.0"
+  },
+  "config": {
+    "posts_per_page": 7
+  },
+  "dependencies": {
+    "gulp-add-src": "^0.2.0"
+  }
+}

@@ -1,0 +1,18 @@
+<section class="school-main card-section outer">
+  <div class="inner">
+    <div class="card-wrapper">
+      <article class="card">
+        <div class="card-content school-card-content">
+          {{#get "posts" filter="tags:facts" order="title asc" as |facts|}}
+            {{#foreach facts}}
+              {{content}}
+              {{^if @last }}
+                <hr/>
+              {{/if}}
+            {{/foreach}}
+          {{/get}}
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,62 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{!-- The big featured header, it uses blog cover image as a BG if available --}}
+{{#post}}
+
+  <header class="site-header outer {{#if
+    feature_image}}" style="background-image: url({{feature_image}}){{else}}no-cover{{/if}}">
+    <div class="inner">
+      {{> "site-nav"}}
+      <div class="site-header-content">
+        <h1 class="site-title">{{title}}</h1>
+        <h2 class="site-description">
+          {{#if description}}
+            {{description}}
+          {{/if}}
+        </h2>
+      </div>
+    </div>
+  </header>
+
+  <section class="news-categories outer">
+    <div class="inner">
+      <div class="news-categories-links">
+        {{#get "tags"
+               filter="slug:[news-for-parents,news-for-teachers,news-library,news-school]"
+               order="name desc"}}
+          {{#foreach tags}}
+            <a href="{{url}}">{{name}}</a>
+          {{/foreach}}
+        {{/get}}
+      </div>
+    </div>
+  </section>
+
+{{/post}}
+{{#get "posts"
+       order="published_at desc"
+       filter="tags:[news,news-for-parents,news-for-teachers,library-news,school-news]+featured:true"
+       as |featured|
+}}
+
+  <main id="news-main" class="news-main outer" role="main">
+    <div class="inner">
+      <div class="post-feed">
+        {{#foreach featured}}
+        {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+          {{> "post-card"}}
+        {{/foreach}}
+      </div>
+    </div>
+  </main>
+
+{{/get}}
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+
+{{#contentFor "scripts"}}
+  <script>
+    'function' === typeof window.initPage && window.initPage(".post-full-content");
+  </script>
+{{/contentFor}}
