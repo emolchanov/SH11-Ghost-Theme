@@ -1,50 +1,58 @@
-{{!
-< default}} {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
-  {{!-- The big featured header, it uses blog cover image as a BG if available --}} {{#tag}} <header class="site-header outer {{#if
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+{{!-- The big featured header, it uses blog cover image as a BG if available --}}
+{{#tag}}
+  <header class="site-header outer {{#if
     feature_image}}" style="background-image: url({{feature_image}}){{else}}no-cover{{/if}}">
+    <div class="inner">
+      {{> "site-nav"}}
+      <div class="site-header-content">
+        <h1 class="site-title">{{name}}</h1>
+        <h2 class="site-description">
+          {{#if description}}
+            {{description}}
+          {{/if}}
+        </h2>
+      </div>
+    </div>
+  </header>
+{{/tag}}
+
+
+<main class="site-main outer no-flex-grow">
   <div class="inner">
-    {{> "site-nav"}}
-    <div class="site-header-content">
-      <h1 class="site-title">{{name}}</h1>
-      <h2 class="site-description">
-        {{#if description}} {{description}} {{/if}}
-      </h2>
+    <div class="post-feed">
+      <article class="post-card post">
+        <a class="post-card-image-link" href="/help">
+          <div class="post-card-image"
+               style="background-image: url(https://images.unsplash.com/photo-1495653797063-114787b77b23?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=34917b8d7e35d393b412378e53c3e2ba)"
+          />
+        </a>
+        <div class="post-card-content">
+          <a class="post-card-content-link" href="/help">
+            <header class="post-card-header">
+              <h2 class="post-card-title">В любому випадку тобі допоможуть!</h2>
+            </header>
+            <section class="post-card-excerpt">
+              <p>
+                Натисни щоб переглянути інформацію
+              </p>
+            </section>
+          </a>
+        </div>
+      </article>
     </div>
   </div>
-  </header>
-  {{/tag}}
+</main>
 
-
-  <main class="site-main outer no-flex-grow">
-    <div class="inner">
-      <div class="post-feed">
-        <article class="post-card post">
-          <a class="post-card-image-link" href="/help">
-            <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1495653797063-114787b77b23?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=34917b8d7e35d393b412378e53c3e2ba)"
-            />
-          </a>
-          <div class="post-card-content">
-            <a class="post-card-content-link" href="/help">
-              <header class="post-card-header">
-                <h2 class="post-card-title">В будь-якому разі тобі допоможуть!</h2>
-              </header>
-              <section class="post-card-excerpt">
-                <p>
-                  Натисни щоб переглянути інформацію
-                </p>
-              </section>
-            </a>
-          </div>
-        </article>
-      </div>
+{{!-- The main content area --}}
+<main id="site-main" class="site-main outer" role="main">
+  <div class="inner">
+    <div class="post-feed no-padding" id="infinite-load">
+      {{#foreach posts}}
+        {{> "post-card"}}
+      {{/foreach}}
     </div>
-  </main>
-
-  {{!-- The main content area --}}
-  <main id="site-main" class="site-main outer" role="main">
-    <div class="inner">
-      <div class="post-feed no-padding" id="infinite-load">
-        {{#foreach posts}} {{> "post-card"}} {{/foreach}}
-      </div>
-    </div>
-  </main>
+  </div>
+</main>
