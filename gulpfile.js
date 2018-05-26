@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const path = require('path');
 
 // gulp plugins and utils
 const gutil = require('gulp-util');
@@ -81,3 +82,4 @@ gulp.task('watch', () => {
 gulp.task('default', ['build'], () => gulp.start('watch'));
 
 gulp.task('pack', ['scripts', 'styles'], () => gulp.src(pack).pipe(zip(`${pkg.name}.zip`)).pipe(gulp.dest('dist')));
+gulp.task('dist', ['scripts', 'styles'], () => gulp.src(pack).pipe(gulp.dest(path.resolve('/Users/y.molchanov/MyProjects/sh11.pp.ua/themes/sh11-ghost-theme'))));

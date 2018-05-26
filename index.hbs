@@ -28,8 +28,8 @@ into the {body} of the default.hbs template --}}
     <div class="post-feed">
       {{#get "posts"
              limit="all"
-             filter="tags:main" as |important|}}
-        {{#foreach important}}
+             filter="tags:main" as |mainposts|}}
+        {{#foreach mainposts}}
           {{> "post-card"}}
         {{/foreach}}
       {{/get}}
