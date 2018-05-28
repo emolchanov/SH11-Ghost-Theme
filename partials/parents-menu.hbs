@@ -1,0 +1,20 @@
+<section class="news-categories outer">
+  <div class="inner">
+    <div class="news-categories-links">
+      {{#get "tags"
+              filter="slug:[news-for-parents,zno,professional-guidance]+slug:-{{slug}}"
+              order="name asc" }}
+        {{#foreach tags}}
+          <a href="{{url}}">{{name}}</a>
+        {{/foreach}}
+      {{/get}}
+      {{#get "posts"
+              filter="page:true+slug:[dpa,profitability]+slug:-{{slug}}"
+              order="name desc"}}
+        {{#foreach posts}}
+          <a href="{{url}}">{{title}}</a>
+        {{/foreach}}
+      {{/get}}
+    </div>
+  </div>
+</section>

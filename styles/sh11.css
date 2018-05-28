@@ -49,6 +49,8 @@ body {
     padding-top: 0;
   }
 
+  .tag-zno .post-feed,
+  .tag-professional-guidance .post-feed,
   .tag-news-school .post-feed,
   .tag-news-library .post-feed,
   .tag-news-for-teachers .post-feed,
@@ -222,6 +224,9 @@ body {
     margin: 20px;
     padding: 15px;
     font-size: 1.6rem;
+    flex-grow: 1;
+    flex-shrink: 1;
+    white-space: nowrap;
   }
 }
 
@@ -236,10 +241,6 @@ body {
 
 .post-card:hover {
   transform: translate3d(0, -3px, 0);
-}
-
-.subscribe-form {
-  background-color: whitesmoke;
 }
 
 .read-next-card {
@@ -278,4 +279,12 @@ body {
 .copyright {
   text-align: center;
   width: 100%;
+}
+
+.post .subscribe-form {
+  background: whitesmoke;
+}
+
+.post .subscribe-form button {
+  color: #15181b;
 }

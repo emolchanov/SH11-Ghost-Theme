@@ -24,10 +24,17 @@ into the {body} of the default.hbs template --}}
     <div class="inner">
       <div class="news-categories-links">
         {{#get "tags"
-               filter="slug:[news-for-parents,news-for-teachers,news-library,news-school]"
-               order="name desc"}}
+                filter="slug:[news-for-parents,zno,professional-guidance]+slug:-{{slug}}"
+                order="name asc" }}
           {{#foreach tags}}
             <a href="{{url}}">{{name}}</a>
+          {{/foreach}}
+        {{/get}}
+        {{#get "posts"
+                filter="page:true+slug:[dpa,profitability]+slug:-{{slug}}"
+                order="name desc"}}
+          {{#foreach posts}}
+            <a href="{{url}}">{{title}}</a>
           {{/foreach}}
         {{/get}}
       </div>
@@ -37,14 +44,14 @@ into the {body} of the default.hbs template --}}
 {{/post}}
 {{#get "posts"
        order="published_at desc"
-       filter="tags:[news,news-for-parents,news-for-teachers,library-news,school-news]"
-       as |allnewsitems|
+       filter="tags:[news-for-parents,zno,professional-guidance]"
+       as |allitems|
 }}
 
   <main id="news-main" class="news-main outer" role="main">
     <div class="inner">
       <div class="post-feed" id="infinite-load">
-        {{#foreach allnewsitems}}
+        {{#foreach allitems}}
         {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
           {{> "post-card"}}
         {{/foreach}}
