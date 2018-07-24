@@ -130,9 +130,6 @@ body {
   text-align: center;
   padding-bottom: 25px;
   padding-top: 60px;
-}
-
-.school-card-content .kg-card-markdown {
   max-width: none;
 }
 
@@ -248,7 +245,11 @@ body {
 }
 
 .read-next-card::before {
-  background: linear-gradient(135deg, rgba(181, 133, 38, 0.8), rgba(181, 133, 38, 0.7));
+  background: linear-gradient(
+    135deg,
+    rgba(181, 133, 38, 0.8),
+    rgba(181, 133, 38, 0.7)
+  );
 }
 
 .subscribe-overlay {
