@@ -4,10 +4,11 @@
   "demo": "https://sh11.pp.ua",
   "version": "1.3.0",
   "engines": {
-    "ghost": ">=1.9.0"
+    "ghost-api": "v3"
   },
   "scripts": {
     "start": "gulp default",
+    "test": "gscan -z dist/sh11-ghost-theme.zip",
     "build": "gulp pack"
   },
   "license": "MIT",
@@ -27,8 +28,7 @@
     ]
   },
   "keywords": [
-    "ghost",
-    "theme"
+    "ghost-theme"
   ],
   "repository": {
     "type": "git",
@@ -69,6 +69,7 @@
   },
   "dependencies": {
     "jquery": "3.3.1",
-    "lodash": "4.17.10"
+    "lodash": "4.17.10",
+    "natives": "^1.1.6"
   }
 }

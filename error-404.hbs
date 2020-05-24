@@ -20,7 +20,7 @@ It's a good idea to keep this template as minimal as possible in terms of both f
     feature_image}}" style="background-image: url({{feature_image}}){{else}}no-cover{{/if}}">
     <div class="inner">
       <nav class="site-nav-center">
-        <a class="site-nav-logo" href="{{@blog.url}}">{{@blog.description}}</a>
+        <a class="site-nav-logo" href="{{@site.url}}">{{@site.description}}</a>
       </nav>
     </div>
   </header>
@@ -28,9 +28,9 @@ It's a good idea to keep this template as minimal as possible in terms of both f
   <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
       <section class="error-message">
-        <h1 class="error-code">{{code}}</h1>
+        <h1 class="error-code">{{statusCode}}</h1>
         <p class="error-description">{{message}}</p>
-        <a class="error-link" href="{{@blog.url}}">До головної сторінки →</a>
+        <a class="error-link" href="{{@site.url}}">До головної сторінки →</a>
       </section>
     </div>
   </main>

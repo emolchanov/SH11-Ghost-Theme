@@ -40,15 +40,15 @@ into the {body} of the default.hbs template --}}
         {{!-- Email subscribe form at the bottom of the page --}}
         {{#if @labs.subscribers}}
           <section class="subscribe-form">
-            <h3 class="subscribe-form-title">Підписатися на {{@blog.title}}</h3>
+            <h3 class="subscribe-form-title">Підписатися на {{@site.title}}</h3>
             <p>Отримуйте всі останні та найважливіші повідомлення прямо на поштову скриньку</p>
             {{subscribe_form placeholder="youremail@example.com"}}
           </section>
         {{/if}}
 
         <footer class="post-full-footer">
-          {{!-- Everything inside the #author tags pulls data from the author --}}
-          {{#author}}
+          {{!-- Everything inside the #primary_author tags pulls data from the author --}}
+          {{#primary_author}}
             <section class="author-card">
               {{#if profile_image}}
                 <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}"/>
@@ -60,7 +60,7 @@ into the {body} of the default.hbs template --}}
                 {{/if}}
               </section>
             </section>
-          {{/author}}
+          {{/primary_author}}
         </footer>
 
         {{!--
@@ -102,12 +102,12 @@ into the {body} of the default.hbs template --}}
               {{#if ../primary_tag.feature_image}}
                      style="background-image: url({{../primary_tag.feature_image}})"
               {{else}}
-                {{#if @blog.cover_image}}
-                     style="background-image: url({{@blog.cover_image}})"{{/if}}
+                {{#if @site.cover_image}}
+                     style="background-image: url({{@site.cover_image}})"{{/if}}
               {{/if}}
             >
               <header class="read-next-card-header">
-                <small class="read-next-card-header-sitetitle">&mdash; {{@blog.title}} &mdash;</small>
+                <small class="read-next-card-header-sitetitle">&mdash; {{@site.title}} &mdash;</small>
                 {{#../primary_tag}}
                   <h3 class="read-next-card-header-title"><a href="{{url}}">{{name}}</a></h3>
                 {{/../primary_tag}}

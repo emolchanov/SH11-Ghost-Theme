@@ -1,27 +1,27 @@
 <nav class="site-nav">
   <div class="site-nav-left">
     {{^is "home"}}
-      <a class="site-nav-logo" href="{{@blog.url}}">{{@blog.title}}</a>
+      <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
     {{/is}}
-    {{#if @blog.navigation}}
+    {{#if @site.navigation}}
       {{navigation}}
     {{/if}}
   </div>
   <div class="site-nav-right">
     <div class="social-links">
-      {{#if @blog.facebook}}
-        <a class="social-link social-link-fb" href="{{facebook_url @blog.facebook}}"
+      {{#if @site.facebook}}
+        <a class="social-link social-link-fb" href="{{facebook_url @site.facebook}}"
            target="_blank">{{> "icons/facebook"}}</a>
       {{/if}}
-      {{#if @blog.twitter}}
-        <a class="social-link social-link-tw" href="{{twitter_url @blog.twitter}}"
+      {{#if @site.twitter}}
+        <a class="social-link social-link-tw" href="{{twitter_url @site.twitter}}"
            target="_blank">{{> "icons/twitter"}}</a>
       {{/if}}
     </div>
     {{#if @labs.subscribers}}
       <a class="subscribe-button" href="#subscribe">Підписатися</a>
     {{else}}
-      <a class="rss-button" href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/"
+      <a class="rss-button" href="http://cloud.feedly.com/#subscription/feed/{{@site.url}}/rss/"
          target="_blank">{{> "icons/rss"}}</a>
     {{/if}}
   </div>
